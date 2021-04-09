@@ -25,9 +25,9 @@ def home():
  
 
 
-@app.route("/test")
+@app.route("/contact")
 def test():
-    return render_template("new.html")
+    return render_template("contact.html")
 
 
 
