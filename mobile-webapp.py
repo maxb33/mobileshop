@@ -4,24 +4,29 @@ from flask_mysqldb import MySQL
 
 
 app=Flask(__name__)
+
 app.config['MYSQL_HOST']='localhost'
 app.config['MYSQL_USER']='root'
 app.config['MYSQL_PASSWORD']='rootroot'
 app.config['MYSQL_DB']='mobilerepair'
-app.config['MYSQL_CURSORCLASS']= 'DictCursor'
+app.config['MYSQL_CURSORCLASS']= 'DictCursor' 
 
 mysql=MySQL(app)
 
+def getid():
+    cur=mysql.connection.cursor()
+    cur.execute('''SELECT customerID FROM gives WHERE dropDate='2021-01-23' ''')
+    results=cur.fetchall()
+    return results
+
 @app.route("/")
 def home():
-    # cur=mysql.connection.cursor()
-    # cur.execute('''SELECT imeiNumber,os FROM device WHERE os='mac' ''')
-    # results=cur.fetchall()
-    # print(results)
+   
+    
+    id=getid()
 
 
-
-    return render_template("status.html")
+    return render_template("status.html", id=id[0])
  
 
 
