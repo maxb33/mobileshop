@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{%block content%}
+<h1 style="color:rgb(256, 256, 256)">LET'S CONNECT</h1>
+
+<form action="#" method = "post">
+    <style>
+        sub1{
+            background-color: navy;
+        }
+        </style>
+    
+        <p> NAME:</p>
+        <p><input type="text" name="nm" placeholder = "Name (required)" /></p>
+
+        <p> PHONE NUMBER: </p>
+        <p><input type="number" name="ph" placeholder = "Ph No (required)" /></p>
+
+        <p> EMAIL ADDRESS: </p>
+        <p><input type="text" name="em" placeholder = "Email (required)"/></p>
+
+        <p> DEVICE TYPE: </p>
+        <p><input type="text" name="dt" placeholder = " Device Type (required)" /></p>
+
+        <p> DEVICE NAME/MODEL: </p>
+        <p><input type="text" name="dn" placeholder = " Device Name (required)"/></p>
+
+        <p> DEVICE PROBLEM DESCRIPTION: </p>
+        <p><input type="text" name="dpd" placeholder = " Problem Description (required)"/></p>
+        
+        <p><input type="submit" value="SUBMIT FORM" /></p>
+
+    
+</form>
+{%endblock%}
